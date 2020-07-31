@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CSVReader from 'react-csv-reader'
-import Table from './Table'
+import Validation from './Validation'
 
 
 class Fileupload extends Component{
@@ -12,11 +12,11 @@ class Fileupload extends Component{
   
   fileDataRead=(data, fileInfo)=>{
     //  console.dir(data, fileInfo)
-    
-     this.setState({tableData:data});
-     this.setState({filePresent:true})
-     console.log(data)
-     this.setState({tableHeadings:data[0]});
+    this.setState({tableHeadings:data[0]});
+    data.shift()
+    this.setState({tableData:data});
+    this.setState({filePresent:true})
+    // console.log(this.state.tableData,this.state.tableHeadings)
 
   }  
   render(){
@@ -26,7 +26,7 @@ class Fileupload extends Component{
           {/* <input type="file"></input> */}
            <CSVReader onFileLoaded={this.fileDataRead}/>
            {this.state.filePresent ?  
-            <Table headings={this.state.tableHeadings} data={this.state.tableData} />
+            <Validation headings={this.state.tableHeadings} data={this.state.tableData} />
             :null
         }
       </div>

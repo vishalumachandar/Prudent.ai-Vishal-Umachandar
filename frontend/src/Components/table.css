@@ -1,0 +1,13 @@
+table{
+    border: 2px solid white;
+    margin-top: 5vh;
+}
+th{
+    border-bottom: 2px solid white;
+    width: 200px;
+    color: white;
+}
+tr{
+    color: white;
+    border: 1px solid black;
+}
