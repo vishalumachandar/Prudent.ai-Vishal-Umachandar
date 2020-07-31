@@ -82,7 +82,7 @@ class Validation extends Component{
         <input type="submit" value="Submit" />
       </form>
       {this.state.isFiltered?
-        <Table headings={formatArray} data={this.state.filteredArray}>This table is filtered</Table>
+        <Table headings={formatArray} data={this.state.filteredArray}>*This table is filtered*</Table>
       :
         <Table headings={formatArray} data={this.props.data}></Table>
       }

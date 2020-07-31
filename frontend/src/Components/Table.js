@@ -6,6 +6,7 @@ class Table extends Component{
     render(){
         return(
             <div className="table-display">
+                <p>{this.props.children}</p>
                 <table>
                     {this.props.headings.map((head)=>{
                         return(<th>{head}</th>)
